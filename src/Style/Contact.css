@@ -1,0 +1,45 @@
+/* Contact.css */
+
+.contact-container {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-info ul li {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+  }
+  
+  .contact-info ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .contact-info ul li a:hover {
+    text-decoration: underline;
+  }
+  

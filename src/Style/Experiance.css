@@ -1,0 +1,30 @@
+/* Experiance.css */
+
+.experience-container {
+    padding: 20px;
+  }
+  
+  .experience-details {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .experience-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .experience-details img {
+    max-width: 200px; /* Adjust as needed */
+    margin-bottom: 15px;
+  }
+  
+  .experience-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white;
+  }
+  

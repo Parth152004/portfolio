@@ -1,0 +1,135 @@
+.mainhmmain {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  opacity: 98%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.Homemain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Homeleft {
+  z-index: 2;
+}
+
+.Homeright {
+  z-index: 2;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-icon {
+  margin-top: 20px;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 14px;
+  position: relative;
+  opacity: 0.75;
+}
+
+.wheel {
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  50% {
+    top: 16px;
+    opacity: 0.5;
+  }
+  100% {
+    top: 24px;
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .Homemain {
+    flex-direction: column-reverse;
+  }
+  .Homeleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .Homeleft h1 {
+    text-align: center;
+  }
+  .Homeleft b {
+    text-align: center;
+    padding: 0px 55px;
+  }
+  .Homeleft h3 {
+  }
+  .Homeleft p {
+    margin-top: 20px;
+    font-size: large;
+    text-align: justify;
+    display: block;
+  }
+  .Homeright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 40vh;
+    background-image: url('Parth_Image.jpg');
+    width: 350px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+  .Homeright h3{
+    display: none;
+  }
+  .scroll-icon{
+    display: none;
+  }
+}
