@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Style/Home.css";
+import axios from 'axios';
+
 export default function Home() {
+  const [quotes, setQuotes] = useState("");
+
+  useEffect(() => {
+    const fetchQuote = async () => {
+      try {
+        const response = await axios.get("https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random");
+        const quote = response.data[0].q;
+        setQuotes(quote);
+      } catch (error) {
+        console.error("Error fetching quote:", error);
+        setQuotes("Inspiration is everywhere, even when the API isn't working!");
+      }
+    };
+
+    fetchQuote(); // Call the async function
+  }, ); // Empty dependency array ensures this runs only once
+
   return (
     <div className="mainhmmain">
       <video className="background-video" autoPlay loop muted>
@@ -13,6 +32,9 @@ export default function Home() {
             <h1>
               Enter the Enigmatic World of
               <br /> <b> Parth.</b>
+            </h1>
+            <h1>
+              {quotes}
             </h1>
             <p>
               I'm an insatiably curious problem solver, a thinker who dreams
