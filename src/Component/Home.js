@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Home() {
   const [quotes, setQuotes] = useState("");
-
+  
   useEffect(() => {
     const fetchQuote = async () => {
       try {
@@ -16,9 +16,8 @@ export default function Home() {
         setQuotes("Inspiration is everywhere, even when the API isn't working!");
       }
     };
-
-    fetchQuote(); // Call the async function
-  }, ); // Empty dependency array ensures this runs only once
+    fetchQuote();
+  },);
 
   return (
     <div className="mainhmmain">
