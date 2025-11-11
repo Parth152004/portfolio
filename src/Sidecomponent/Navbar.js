@@ -1,20 +1,45 @@
 import React from "react";
 import "../Style/Navbar.css";
-import { Link as ScrollLink } from "react-scroll";
+import { animateScroll as scrollAnim, scroller } from "react-scroll";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleScroll = (target) => {
+    if (location.pathname !== "/") {
+      // Navigate to home first if on another route
+      navigate("/");
+      setTimeout(() => {
+        scroller.scrollTo(target, {
+          smooth: true,
+          duration: 500,
+          offset: -70,
+        });
+      }, 300);
+    } else {
+      // Already on home — just scroll
+      scroller.scrollTo(target, {
+        smooth: true,
+        duration: 500,
+        offset: -70,
+      });
+    }
+  };
+
   return (
     <div className="constomcss">
-      <nav className="navbar navbar-expand-lg  container ">
+      <nav className="navbar navbar-expand-lg container">
         <div className="container-fluid">
-          <ScrollLink
+          <span
             className="navbar-brand"
-            to="home"
-            smooth={true}
-            duration={500}
+            style={{ cursor: "pointer" }}
+            onClick={() => handleScroll("home")}
           >
             Parth Patel
-          </ScrollLink>
+          </span>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -26,72 +51,72 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item homebtn">
-                <ScrollLink
+                <span
                   className="nav-link"
-                  to="home"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  offset={-70} // Adjust as needed based on your navbar height
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleScroll("home")}
                 >
                   {"<"}Home{"/>"}
-                </ScrollLink>
+                </span>
               </li>
             </ul>
+
             <div className="d-flex" role="search">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <ScrollLink
+                  <span
                     className="nav-link"
-                    to="skill"
-                    smooth={true}
-                    duration={500}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleScroll("skill")}
                   >
                     {"<"}Skill{"/>"}
-                  </ScrollLink>
+                  </span>
                 </li>
                 <li className="nav-item btnstyle">
-                  <ScrollLink
-                    className="nav-link  btncolor"
-                    to="Project"
-                    smooth={true}
-                    duration={500}
+                  <span
+                    className="nav-link btncolor"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleScroll("Project")}
                   >
                     {"<"}Project{"/>"}
-                  </ScrollLink>
+                  </span>
                 </li>
                 <li className="nav-item btnstyle">
-                  <ScrollLink
-                    className="nav-link  btncolor"
-                    to="certificate"
-                    smooth={true}
-                    duration={500}
+                  <span
+                    className="nav-link btncolor"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleScroll("certificate")}
                   >
                     {"<"}Certificate{"/>"}
-                  </ScrollLink>
+                  </span>
                 </li>
                 <li className="nav-item btnstyle">
-                  <ScrollLink
-                    className="nav-link  btncolor"
-                    to="Experiance"
-                    smooth={true}
-                    duration={500}
+                  <span
+                    className="nav-link btncolor"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleScroll("Experiance")}
                   >
                     {"<"}Experience{"/>"}
-                  </ScrollLink>
+                  </span>
+                </li>
+                {/* Diary navigates to a separate route */}
+                <li className="nav-item btnstyle">
+                  <Link className="nav-link btncolor" to="/diary">
+                    {"<"}Diary{"/>"}
+                  </Link>
                 </li>
                 <li className="nav-item btnstyle">
-                  <ScrollLink
-                    className="nav-link  btncolor"
-                    to="Contect"
-                    smooth={true}
-                    duration={500}
+                  <span
+                    className="nav-link btncolor"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleScroll("Contect")}
                   >
                     {"<"}Contact{"/>"}
-                  </ScrollLink>
+                  </span>
                 </li>
               </ul>
             </div>
