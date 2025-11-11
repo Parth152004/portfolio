@@ -1,4 +1,4 @@
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import DairyHeader from "../../Sidecomponent/DairyHeader";
 import "../../Style/Dairy.css";
