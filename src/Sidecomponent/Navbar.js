@@ -1,6 +1,5 @@
-import React from "react";
 import "../Style/Navbar.css";
-import { animateScroll as scrollAnim, scroller } from "react-scroll";
+import {scroller } from "react-scroll";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
