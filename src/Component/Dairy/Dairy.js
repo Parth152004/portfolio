@@ -3,6 +3,7 @@ import Card from '../../Sidecomponent/Card';
 import React, { useEffect, useState } from "react";
 import DairyHeader from "../../Sidecomponent/DairyHeader";
 import { Link } from "react-router-dom";
+import CreateNewDiary from "./CreateNewDiary";
 
 export default function Dairy() {
   const [diaryEntries, setDiaryEntries] = useState([]);
@@ -21,7 +22,9 @@ export default function Dairy() {
   return (
     <div className="diary-backcolor">
       <DairyHeader />
-      <button className="new-entry-button">Write New Entry</button>
+      <Link to="/diary/new" style={{ textDecoration: 'none' }}>
+        <p className="new-entry-button">Write New Entry</p>
+      </Link>
       <div className="entries-grid">
         {
           diaryEntries.map(entry => (

@@ -10,6 +10,7 @@ import Contect from "./Component/Contect";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dairy from "./Component/Dairy/Dairy";
 import DiaryEntryDetail from "./Component/Dairy/DiaryEntryDetail";
+import CreateNewDiary from "./Component/Dairy/CreateNewDiary";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         />
         <Route path="/diary" element={<Dairy />} />
         <Route path="/diary/:id" element={<DiaryEntryDetail />} />
+        <Route path="/diary/new" element={<CreateNewDiary />} />
       </Routes>
     </Router>
   );
