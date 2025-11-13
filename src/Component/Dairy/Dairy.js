@@ -3,7 +3,6 @@ import Card from '../../Sidecomponent/Card';
 import React, { useEffect, useState } from "react";
 import DairyHeader from "../../Sidecomponent/DairyHeader";
 import { Link } from "react-router-dom";
-import CreateNewDiary from "./CreateNewDiary";
 
 export default function Dairy() {
   const [diaryEntries, setDiaryEntries] = useState([]);
