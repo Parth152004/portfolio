@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import "../../Style/Dairy.css"
 import DairyHeader from '../../Sidecomponent/DairyHeader'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateNewDiary() {
+    const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
+
     const [entryData, setEntryData] = useState({
         title: '',
         content: ''
@@ -18,21 +22,25 @@ export default function CreateNewDiary() {
     };
 
     const handleSubmit = (e, action) => {
+        setIsLoading(true);
         e.preventDefault();
         axios.post('https://backend-portfolio-95ly.onrender.com/dairy/newdiary', {
             title: entryData.title,
             highlight: entryData.content.substring(0, 100), // Example: first 100 chars as highlight
             mainContnent: entryData.content,
         }).then(response => {
-            console.log('Entry successfully saved:', response.data);    
+            console.log('Entry successfully saved:', response.data);   
+            navigate('/diary');
+            setIsLoading(false);
         }).catch(error => {
+            setIsLoading(false);
             console.error('There was an error saving the entry!', error);
     });
 
-        // In a real app:
-        // 1. You would validate the data.
-        // 2. You would send the data (entryData) to your API/database.
-        // 3. You would navigate the user back to the list or detail page.
+    if (isLoading) {
+        return <div className="loading-state">Loading Entry...</div>;
+    }
+
     };
     return (
         <div className="diary-backcolor">

@@ -8,7 +8,6 @@ export default function Navbar() {
 
   const handleScroll = (target) => {
     if (location.pathname !== "/") {
-      // Navigate to home first if on another route
       navigate("/");
       setTimeout(() => {
         scroller.scrollTo(target, {
