@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../../Style/Dairy.css"
 import DairyHeader from '../../Sidecomponent/DairyHeader'
+import axios from 'axios';
 
 export default function CreateNewDiary() {
     const [entryData, setEntryData] = useState({
@@ -18,8 +19,15 @@ export default function CreateNewDiary() {
 
     const handleSubmit = (e, action) => {
         e.preventDefault();
-        console.log(`Action: ${action}`);
-        console.log('New Entry Data:', entryData);
+        axios.post('https://backend-portfolio-95ly.onrender.com/dairy/newdiary', {
+            title: entryData.title,
+            highlight: entryData.content.substring(0, 100), // Example: first 100 chars as highlight
+            mainContnent: entryData.content,
+        }).then(response => {
+            console.log('Entry successfully saved:', response.data);    
+        }).catch(error => {
+            console.error('There was an error saving the entry!', error);
+    });
 
         // In a real app:
         // 1. You would validate the data.
