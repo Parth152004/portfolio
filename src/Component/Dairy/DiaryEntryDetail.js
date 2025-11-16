@@ -27,7 +27,7 @@ export default function DiaryEntryDetail() {
             setIsLoading(false);
         };
         fetchEntry();
-    }, [id]);
+    }, [id,entry]);
 
     if (isLoading) {
         return <div className="loading-state">Loading Entry...</div>;
