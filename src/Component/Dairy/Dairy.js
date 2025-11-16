@@ -15,7 +15,7 @@ export default function Dairy() {
   const navigate = useNavigate(); // Hook for redirection
 
   // --- Static Password (WARNING: Unsafe for production) ---
-  const STATIC_PASSWORD = "jyotika"; 
+  const STATIC_PASSWORD = "jyotika jinal tejal dhruv"; 
 
   // --- Authentication Handler ---
   const handlePasswordSubmit = (e) => {
@@ -27,7 +27,7 @@ export default function Dairy() {
     }).catch(error => {
       console.error('There was an error verifying the password!', error);
     });
-    if (inputPassword.toLowerCase() === STATIC_PASSWORD) {
+    if (STATIC_PASSWORD.includes(inputPassword.toLowerCase()) ) {
       setIsAuthenticated(true);
       setError(false);
     } else {
