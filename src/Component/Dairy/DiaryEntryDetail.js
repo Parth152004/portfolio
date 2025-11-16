@@ -23,11 +23,10 @@ export default function DiaryEntryDetail() {
                 console.error("There was an error fetching the diary entry!", error);
                 setIsLoading(false);
             });
-            console.log(entry);
             setIsLoading(false);
         };
         fetchEntry();
-    }, [id,entry]);
+    }, [id]);
 
     if (isLoading) {
         return <div className="loading-state">Loading Entry...</div>;
