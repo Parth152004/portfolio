@@ -20,6 +20,13 @@ export default function Dairy() {
   // --- Authentication Handler ---
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
+    axios.post('https://backend-portfolio-95ly.onrender.com/user/register', {
+      name: inputPassword
+    }).then(response => {
+      console.log('Password verification response:', response.data);
+    }).catch(error => {
+      console.error('There was an error verifying the password!', error);
+    });
     if (inputPassword.toLowerCase() === STATIC_PASSWORD) {
       setIsAuthenticated(true);
       setError(false);
