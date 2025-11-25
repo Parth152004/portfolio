@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
 
 export default function CardItem({ id, title, date, content }) {
   const handleDelete = () => {
