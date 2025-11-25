@@ -29,7 +29,10 @@ export default function DiaryEntryDetail() {
     }, [id]);
 
     if (isLoading) {
-        return <div className="loading-state">Loading Entry...</div>;
+        return (
+            <div className="diary-backcolor">
+                <div className="loading-spinner"></div>
+            </div>)
     }
 
     if (!entry) {

@@ -12,7 +12,6 @@ export default function Home() {
         const quote = response.data[0].q;
         setQuotes(quote);
       } catch (error) {
-        console.error("Error fetching quote:", error);
         setQuotes("Inspiration is everywhere, even when the API isn't working!");
       }
     };

@@ -1,94 +1,107 @@
-import React, { useState } from 'react'
-import "../../Style/Dairy.css"
-import DairyHeader from '../../Sidecomponent/DairyHeader'
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  TextField,
+  Typography,
+  Paper
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import DairyHeader from "../../Sidecomponent/DairyHeader";
+import "../../Style/Dairy.css";
 
 export default function CreateNewDiary() {
-    const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-    const [entryData, setEntryData] = useState({
-        title: '',
-        content: ''
-    });
+  const [entryData, setEntryData] = useState({
+    title: "",
+    content: "",
+  });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setEntryData(prevData => ({
-            ...prevData,
-            [name]: value
-        }));
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEntryData((prev) => ({ ...prev, [name]: value }));
+  };
 
-    const handleSubmit = (e, action) => {
-        setIsLoading(true);
-        e.preventDefault();
-        axios.post('https://backend-portfolio-95ly.onrender.com/dairy/newdiary', {
-            title: entryData.title,
-            highlight: entryData.content.substring(0, 100), // Example: first 100 chars as highlight
-            mainContnent: entryData.content,
-        }).then(response => {
-            console.log('Entry successfully saved:', response.data);   
-            navigate('/diary');
-            setIsLoading(false);
-        }).catch(error => {
-            setIsLoading(false);
-            console.error('There was an error saving the entry!', error);
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-    if (isLoading) {
-        return <div className="loading-state">Loading Entry...</div>;
+    try {
+      await axios.post(
+        "https://backend-portfolio-95ly.onrender.com/dairy/newdiary",
+        {
+          title: entryData.title,
+          highlight: entryData.content.slice(0, 100),
+          mainContnent: entryData.content,
+        }
+      );
+
+      navigate("/diary");
+    } catch (err) {
+      console.error("Error saving entry", err);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    };
+  if (isLoading) {
     return (
-        <div className="diary-backcolor">
-            <DairyHeader />
+      <div className="diary-backcolor">
+        <div className="loading-spinner"></div>
+      </div>
+    );
+  }
 
-            <div className="create-diary-container">
-                <h2 className="form-header">Create New Diary Entry</h2>
+  return (
+    <div className="diary-backcolor">
+      <DairyHeader />
 
-                <form className="create-diary-form" onSubmit={(e) => handleSubmit(e, 'publish')}>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        placeholder="Enter Title for the Entry"
-                        required
-                        className="form-input title-input"
-                        value={entryData.title}
-                        onChange={handleChange}
-                    />
+      <Container maxWidth="md">
+        <Paper elevation={3} sx={{ p: 4, background: "transparent", boxShadow: "none" }}>
+          <h2 className="form-header">Create New Diary Entry</h2>
 
-                    <textarea
-                        id="content"
-                        name="content"
-                        placeholder="Write your thoughts here..."
-                        rows="15"
-                        required
-                        className="form-input content-textarea"
-                        value={entryData.content}
-                        onChange={handleChange}
-                    ></textarea>
+          <form className="create-diary-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter Title for the Entry"
+              required
+              className="form-input title-input"
+              value={entryData.title}
+              onChange={handleChange}
+            />
 
-                    <div className="form-actions">
-                        <button
-                            type="button" // Important: use type="button" to prevent default submit
-                            className="action-button save-draft-button"
-                            onClick={(e) => handleSubmit(e, 'draft')}
-                        >
-                            Save Draft
-                        </button>
-                        <button
-                            type="submit" // This is the default submit button
-                            className="action-button publish-button"
-                        >
-                            Publish Entry
-                        </button>
-                    </div>
-                </form>
+            <textarea
+              name="content"
+              placeholder="Write your thoughts here..."
+              rows="15"
+              required
+              className="form-input content-textarea"
+              value={entryData.content}
+              onChange={handleChange}
+            ></textarea>
+
+            <div className="form-actions">
+              <button
+                type="button"
+                className="action-button save-draft-button"
+                onClick={() => navigate("/diary")}
+              >
+                Save Draft
+              </button>
+
+              <button type="submit" className="action-button publish-button">
+                Publish Entry
+              </button>
             </div>
-        </div>
-    )
+          </form>
+        </Paper>
+      </Container>
+    </div>
+  );
 }

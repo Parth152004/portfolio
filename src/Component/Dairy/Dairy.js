@@ -1,111 +1,65 @@
-import "../../Style/Dairy.css";
-import Card from '../../Sidecomponent/Card';
 import React, { useEffect, useState } from "react";
-import DairyHeader from "../../Sidecomponent/DairyHeader";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Container,
+  CircularProgress,
+  Grid,
+  Typography
+} from "@mui/material";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import DairyHeader from "../../Sidecomponent/DairyHeader";
+import CardItem from "../../Sidecomponent/Card";
+import "../../Style/Dairy.css";
 
-export default function Dairy() {
-  // --- State Variables ---
+export default function Diary() {
   const [diaryEntries, setDiaryEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [inputPassword, setInputPassword] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [error, setError] = useState(false);
-  const navigate = useNavigate(); // Hook for redirection
-
-  // --- Static Password (WARNING: Unsafe for production) ---
-  const STATIC_PASSWORD = "jyotika jinal tejal dhruv"; 
-
-  // --- Authentication Handler ---
-  const handlePasswordSubmit = (e) => {
-    e.preventDefault();
-    axios.post('https://backend-portfolio-95ly.onrender.com/user/register', {
-      name: inputPassword
-    }).then(response => {
-      console.log('Password verification response:', response.data);
-    }).catch(error => {
-      console.error('There was an error verifying the password!', error);
-    });
-    if (STATIC_PASSWORD.includes(inputPassword.toLowerCase()) ) {
-      setIsAuthenticated(true);
-      setError(false);
-    } else {
-      setError(true);
-      setInputPassword('');
-    }
-  };
 
   useEffect(() => {
-    if (isAuthenticated) {
-      setIsLoading(true);
-      axios.get('https://backend-portfolio-95ly.onrender.com/dairy/getdairy').then(response => {
-        setDiaryEntries(response.data.data);
+    axios
+      .get("https://backend-portfolio-95ly.onrender.com/dairy/getdairy")
+      .then((res) => {
+        setDiaryEntries(res.data.data);
         setIsLoading(false);
-      }).catch(error => {
+      })
+      .catch((err) => {
+        console.error("Error fetching diary entries", err);
         setIsLoading(false);
-        console.error("There was an error fetching the diary entries!", error);
       });
-    } else {
-      setIsLoading(false);
-    }
-  }, [isAuthenticated, navigate]);
+  }, []);
 
- 
-  if (isLoading && isAuthenticated) {
-    return <div className="loading-state">Loading Entries...</div>;
-  }
-
-  // 2. Render Password Prompt (if not authenticated)
-  if (!isAuthenticated) {
+  if (isLoading) {
     return (
-      <div className="diary-backcolor password-overlay">
-        <div className="password-popup">
-          <form onSubmit={handlePasswordSubmit}>
-            <h2>Diary Access</h2>
-            <p>Please Enter the Name to View Entries.</p>
-            <input
-              type="password"
-              value={inputPassword}
-              onChange={(e) => setInputPassword(e.target.value)}
-              placeholder="Enter Your Name"
-              autoFocus
-            />
-            {error && <p className="error-message">Please Enter Your Name 😁!</p>}
-            <div className="popup-actions">
-              <button type="submit">Unlock</button>
-              <button type="button" onClick={() => navigate('/')}>Home</button>
-            </div>
-          </form>
-        </div>
+      <div className="diary-backcolor">
+        <div className="loading-spinner"></div>
       </div>
     );
   }
 
-  // 3. Render Main Content (if authenticated)
   return (
     <div className="diary-backcolor">
       <DairyHeader />
-      <Link to="/diary/new" style={{ textDecoration: 'none' }}>
+
+      <Link to="/diary/new" style={{ textDecoration: "none" }}>
         <p className="new-entry-button">Write New Entry</p>
       </Link>
+
       <div className="entries-grid">
-        {
-          diaryEntries.map((entry, index) => (
-            // Changed key to entry._id (assuming MongoDB provides an _id) for better practice
-            <Link
-              key={entry._id || index}
-              to={`/diary/${index + 1}`}
-              style={{ textDecoration: 'none' }}
-              state={entry}
-            >
-              <Card
-                title={entry.title}
-                date={entry.date}
-                content={entry.highlight}
-              />
-            </Link>
-          ))}
+        {diaryEntries.map((entry, index) => (
+          <Link
+            key={entry._id || index}
+            to={`/diary/${index + 1}`}
+            style={{ textDecoration: "none" }}
+            state={entry}
+          >
+            <CardItem
+              id={entry._id}
+              title={entry.title}
+              date={entry.date}
+              content={entry.highlight}
+            />
+          </Link>
+        ))}
       </div>
     </div>
   );
