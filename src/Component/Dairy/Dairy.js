@@ -40,19 +40,14 @@ export default function Diary() {
 
       <div className="entries-grid">
         {diaryEntries.map((entry, index) => (
-          <Link
-            key={entry._id || index}
-            to={`/diary/${index + 1}`}
-            style={{ textDecoration: "none" }}
-            state={entry}
-          >
-            <CardItem
-              id={entry._id}
-              title={entry.title}
-              date={entry.date}
-              content={entry.highlight}
-            />
-          </Link>
+          <CardItem
+            index={index}
+            id={entry._id}
+            title={entry.title}
+            date={entry.date}
+            content={entry.highlight}
+            mainContnent={entry.mainContnent}
+          />
         ))}
       </div>
     </div>
