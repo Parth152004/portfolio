@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-    Container,
-    Paper
-} from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import DairyHeader from "../../Sidecomponent/DairyHeader";
@@ -26,7 +23,6 @@ export default function CreateNewDiary() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-
         try {
             await axios.post(
                 "https://backend-portfolio-95ly.onrender.com/dairy/newdiary",
@@ -38,7 +34,6 @@ export default function CreateNewDiary() {
                     mainContnent: entryData.content,
                 }
             );
-
             navigate("/diary");
         } catch (err) {
             console.error("Error saving entry", err);
@@ -58,7 +53,6 @@ export default function CreateNewDiary() {
     return (
         <div className="diary-backcolor">
             <DairyHeader />
-
             <Container maxWidth="md">
                 <Paper elevation={3} sx={{ p: 4, background: "transparent", boxShadow: "none" }}>
                     <h2 className="form-header">Create New Diary Entry</h2>
@@ -90,11 +84,7 @@ export default function CreateNewDiary() {
                                 className="action-button save-draft-button"
                                 onClick={() => navigate("/diary")}
                             >
-                                Save Draft
-                            </button>
-
-                            <button type="submit" className="action-button publish-button">
-                                Publish Entry
+                                Publish
                             </button>
                         </div>
                     </form>

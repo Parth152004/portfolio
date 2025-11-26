@@ -46,10 +46,6 @@ export default function DiaryEntryDetail() {
                 <h2 className="detail-title">{entry.title}</h2>
                 <span className="detail-date">{entry.date}</span>
                 <p className="detail-content">{entry.mainContnent}</p>
-                <div className="sharing-bar">
-                    <button className="action-button share-button">Share on Twitter</button>
-                    <button className="action-button share-button">Share on Facebook</button>
-                </div>
             </div>
         </div>
     )

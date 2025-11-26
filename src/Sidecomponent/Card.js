@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function CardItem({ index, id, title, date, content, mainContnent }) {
     const handleDelete = () => {
-        axios
-            .delete(
-                `https://backend-portfolio-95ly.onrender.com/dairy/deletedairy/${id}`
-            )
-            .then(() => console.log("Deleted:", id))
+        axios.delete(`https://backend-portfolio-95ly.onrender.com/dairy/deletedairy/${id}`)
+            .then(() => console.log("Deleted:", id), window.location.reload())
             .catch((err) => console.error("Delete error:", err));
     };
     return (
@@ -18,23 +15,17 @@ export default function CardItem({ index, id, title, date, content, mainContnent
                 style={{ textDecoration: "none" }}
             >
                 <h3 className="card-title">{title}</h3>
-                <span className="entry-date">
-                    {date}
-                </span>
+                <span className="entry-date">{date}</span>
                 <p className="card-content">{content}</p>
             </Link>
             <div className="entry-actions">
-                <button className="action-button">Share</button>
                 <Link
                     to="/diary/new"
                     state={{ id: id, title: title, date: date, content: content, mainContnent: mainContnent }}
                 >
                     <button className="action-button" >Edit</button>
                 </Link>
-
-                <button className="action-button" onClick={handleDelete}>
-                    Delete
-                </button>
+                <button className="action-button" onClick={handleDelete}>Delete</button>
             </div>
         </div>
     );
