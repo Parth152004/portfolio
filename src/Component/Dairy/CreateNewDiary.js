@@ -79,11 +79,7 @@ export default function CreateNewDiary() {
                         ></textarea>
 
                         <div className="form-actions">
-                            <button
-                                type="button"
-                                className="action-button save-draft-button"
-                                onClick={() => navigate("/diary")}
-                            >
+                            <button type="submit" className="action-button publish-button">
                                 Publish
                             </button>
                         </div>
