@@ -1,10 +1,13 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CardItem({ index, id, title, date, content, mainContnent }) {
+    const navigate = useNavigate();
+
     const handleDelete = () => {
         axios.delete(`https://backend-portfolio-95ly.onrender.com/dairy/deletedairy/${id}`)
-            .then(() => console.log("Deleted:", id), window.location.reload())
+            .then(() => console.log("Deleted:", id),navigate("/diary/new") )
             .catch((err) => console.error("Delete error:", err));
     };
     return (
