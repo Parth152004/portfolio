@@ -116,6 +116,12 @@ export default function Navbar() {
                     {"<"}Contact{"/>"}
                   </span>
                 </li>
+                {/* Diary navigates to a separate route */}
+                <li className="nav-item btnstyle">
+                  <Link className="nav-link btncolor" to="/viewMyBooking">
+                    {"<"}MachineBooking{"/>"}
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

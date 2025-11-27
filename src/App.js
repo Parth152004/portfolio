@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dairy from "./Component/Dairy/Dairy";
 import DiaryEntryDetail from "./Component/Dairy/DiaryEntryDetail";
 import CreateNewDiary from "./Component/Dairy/CreateNewDiary";
+import ViewMyBooking from "./Component/MachineBooking/ViewMyBooking";
+import BookMachine from "./Component/MachineBooking/BookMachine";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/diary" element={<Dairy />} />
         <Route path="/diary/:id" element={<DiaryEntryDetail />} />
         <Route path="/diary/new" element={<CreateNewDiary />} />
+        <Route path="/viewMyBooking" element={<ViewMyBooking/>} />
+        <Route path="/booking" element={<BookMachine/>} />
       </Routes>
     </Router>
   );

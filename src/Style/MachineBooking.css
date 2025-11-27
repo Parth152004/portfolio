@@ -1,0 +1,141 @@
+.my-booking{
+    background-color: #282c34;
+    border: 2px solid #61dafb;
+}
+
+.bookinglist{
+    display: flex;
+    justify-content: center;
+}
+
+/* Container background */
+.viewbooking-container {
+    background-color: #282c34;
+    min-height: 83.5vh;
+    color: #61dafb;
+    padding-top: 20px;
+}
+
+/* Filter section */
+.fillter-section {
+    background-color: #1f2329;
+    border: 2px solid #61dafb;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.fillter-section span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.fillter-section select {
+    background-color: #282c34;
+    color: #61dafb;
+    border: 1px solid #61dafb;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.fillter-section button {
+    background-color: #61dafb;
+    border: none;
+    color: #282c34;
+    font-weight: bold;
+}
+
+/* Booking container */
+.view-booking h4 {
+    margin-top: 20px;
+    color: #61dafb;
+    border-bottom: 1px solid #61dafb;
+    padding-bottom: 5px;
+    width: max-content;
+}
+
+/* Booking card */
+.booking-card {
+    background-color: #1f2329;
+    border: 2px solid #61dafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0px 0px 10px rgba(97, 218, 251, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.booking-card:hover {
+    transform: scale(1.02);
+}
+
+.booking-card p {
+    margin: 5px 0;
+    color: #d6f4ff;
+}
+
+.booking-card strong {
+    color: #61dafb;
+}
+
+/* Page Title */
+.book-title {
+    text-align: center;
+    color: #61dafb;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Booking form */
+.booking-form {
+    background-color: #1f2329;
+    border: 2px solid #61dafb;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(97, 218, 251, 0.25);
+}
+
+/* Form labels */
+.booking-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #61dafb;
+}
+
+/* Form inputs and dropdowns */
+.booking-form select,
+.booking-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #282c34;
+    color: #61dafb;
+    border: 1px solid #61dafb;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Submit button */
+.btn-submit {
+    width: 100%;
+    background-color: #61dafb;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #282c34;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.03);
+    background-color: #74e0ff;
+}
