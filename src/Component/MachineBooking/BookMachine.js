@@ -12,14 +12,17 @@ export default function BookMachine() {
 
     const handleChange = (e) => {
         console.log(e.target.name, e.target.value,formData);
+        // eslint-disable-next-line eqeqeq
         if(e.target.name == 'slot') {
             if(e.target.value === 'Morning') {
                 setFormData({ ...formData, slot: true });
             }
         }
+        // eslint-disable-next-line eqeqeq
         if(e.target.name == 'userName') {
             setFormData({ ...formData, userName: e.target.value });
         }
+        // eslint-disable-next-line eqeqeq
         if(e.target.name == 'date') {
             setFormData({ ...formData, date: e.target.value });
         }
