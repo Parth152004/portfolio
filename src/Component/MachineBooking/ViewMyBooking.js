@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from 'react'
 import MachineNavbar from './MachineNavbar'
-import axios from 'axios';
 
 export default function ViewMyBooking() {
-    const bookings = useState([]);
-
-    useEffect(()=>{
-        axios.get('');
-    },[]);
-
-
     return (
         <div>
             <MachineNavbar />
