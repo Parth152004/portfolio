@@ -1,0 +1,11 @@
+/* App.css */
+.main-content-flow {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+}

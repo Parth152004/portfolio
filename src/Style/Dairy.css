@@ -1,365 +1,361 @@
-/* src/Style/Dairy.css */
+/* Dairy.css - Calm & Composed Sub-Application Theme */
 
-/* --- GLOBAL LAYOUT & BACKGROUND --- */
-
+/* Global Layout & Background */
 .diary-backcolor {
-    background-color: #282c34; /* Darker, modern background */
-    min-height: 100vh;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #f0f0f0; /* Light text */
+  background-color: var(--bg-primary, #090d16);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f8fafc;
 }
 
-/* --- HEADER (New Component) --- */
-
+/* Header */
 .diary-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%; /* Use a percentage for better responsiveness */
-    max-width: 1200px; /* Cap the max width */
-    margin-bottom: 30px;
-    padding: 15px 0;
-    border-bottom: 1px solid #444; /* Subtle separator */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .diary-header h1 {
-    font-size: 1.8em;
-    margin: 0;
+  font-size: 1.8em;
+  margin: 0;
+  color: #f8fafc;
+  font-weight: 700;
 }
 
-/* --- BUTTONS --- */
-
+/* Buttons */
 .new-entry-button {
-    background-color: #61dafb; /* React-blue color */
-    color: #282c34;
-    font-weight: bold;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    transition: background-color 0.3s;
+  background-color: #38bdf8;
+  color: #090d16;
+  font-weight: 650;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 36px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
 }
 
 .new-entry-button:hover {
-    background-color: #40c4ff;
+  background-color: #0ea5e9;
+  color: #ffffff;
 }
 
-/* --- ENTRIES GRID (The main layout improvement) --- */
-
+/* Entries Grid */
 .entries-grid {
-    /* 💡 IMPROVEMENT: CSS Grid for responsive columns */
-    display: grid;
-    gap: 30px; /* Space between cards */
-    width: 90%;
-    max-width: 1200px;
-    
-    /* Auto-fit creates as many columns as fit the available space */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    justify-content: center; /* Center the grid items */
+  display: grid;
+  gap: 24px;
+  width: 90%;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
 }
 
-/* --- CARD STYLES --- */
-
+/* Card Styles */
 .entry-card {
-    background-color: #333842; /* Slightly lighter than the background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--bg-card, #131b2e);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .entry-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
 }
 
 .card-title {
-    color: #61dafb;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.4em;
+  color: #38bdf8;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
 }
 
 .entry-date {
-    color: #aaa;
-    font-size: 0.9em;
-    margin-bottom: 15px;
-    display: block;
+  color: #64748b;
+  font-size: 0.85em;
+  font-family: var(--font-mono, monospace);
+  margin-bottom: 12px;
+  display: block;
 }
 
 .card-content {
-    color: #ccc;
-    flex-grow: 1; /* Pushes the actions to the bottom */
+  color: #94a3b8;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .entry-actions {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .action-button {
-    background: none;
-    border: 1px solid #61dafb;
-    color: #61dafb;
-    padding: 8px 15px;
-    margin-right: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  padding: 6px 14px;
+  margin-right: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .action-button:hover {
-    background-color: #61dafb;
-    color: #282c34;
+  background-color: #38bdf8;
+  color: #090d16;
 }
 
-/* --- MEDIA QUERY --- */
-
-@media (max-width: 600px) {
-    .diary-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .diary-header h1:last-child {
-        font-size: 1.2em;
-        margin-top: 5px;
-    }
-    .diary-backcolor {
-        padding: 15px;
-    }
-}
-
+/* Detail View */
 .detail-title {
-    color: #61dafb;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  color: #38bdf8;
+  font-size: 2.2em;
+  margin-bottom: 8px;
+  font-weight: 800;
 }
 
 .detail-date {
-    color: #aaa;
-    display: block;
-    margin-bottom: 30px;
-    font-style: italic;
+  color: #64748b;
+  display: block;
+  margin-bottom: 24px;
+  font-style: italic;
+  font-family: var(--font-mono, monospace);
 }
 
 .detail-content {
-    color: #f0f0f0;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    white-space: pre-wrap; /* Preserves formatting like line breaks */
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  white-space: pre-wrap;
+  font-size: 1.05rem;
 }
 
-/* --- CREATE NEW DIARY FORM STYLES (NEW!) --- */
-
-
+/* Create New Diary Form */
 .form-header {
-    color: #f0f0f0;
-    font-size: 2em;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #61dafb; /* Accent line */
-    padding-bottom: 10px;
+  color: #f8fafc;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 8px;
 }
 
 .create-diary-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between form elements */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .form-input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    font-size: 1em;
-    background-color: #282c34; /* Very dark input background */
-    color: #f0f0f0;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    outline: none; /* Remove default outline */
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 0.95em;
+  background-color: #0f1626;
+  color: #f8fafc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
 }
 
 .form-input::placeholder {
-    color: #888;
+  color: #64748b;
 }
 
 .form-input:focus {
-    border-color: #61dafb;
-    box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2); /* Soft blue glow on focus */
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
 }
 
 .title-input {
-    font-size: 1.5em;
-    font-weight: 600;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 
 .content-textarea {
-    resize: vertical; /* Allow resizing vertically only */
-    line-height: 1.5;
-    font-family: inherit; /* Use the document font */
+  resize: vertical;
+  line-height: 1.6;
+  font-family: inherit;
+  min-height: 200px;
 }
 
 .form-actions {
-    display: flex;
-    justify-content: flex-end; /* Push buttons to the right */
-    gap: 15px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .save-draft-button {
-    background-color: #555;
-    color: #f0f0f0;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .save-draft-button:hover {
-    background-color: #777;
+  background-color: #334155;
+  color: #ffffff;
 }
 
 .publish-button {
-    background-color: #61dafb;
-    color: #282c34;
+  background-color: #38bdf8;
+  color: #090d16;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 650;
+  cursor: pointer;
 }
 
 .publish-button:hover {
-    background-color: #40c4ff;
+  background-color: #0ea5e9;
+  color: #ffffff;
 }
 
-/* --- MODAL/PASSWORD POPUP STYLES --- */
-
+/* Modal Password Overlay */
 .password-overlay {
-    /* Full screen overlay to capture user focus */
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Very dark, high-contrast background */
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 1000; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 9, 16, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .password-popup {
-    /* Popup container style */
-    background-color: #333842; /* Matches your entry-card background */
-    padding: 40px; 
-    border-radius: 10px; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Strong shadow */
-    text-align: center;
-    max-width: 400px; 
-    width: 90%; 
-    color: #f0f0f0; /* Light text color */
-    border: 1px solid #444; /* Subtle border */
+  background-color: #131b2e;
+  padding: 36px;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .password-popup h2 {
-    font-size: 2em; 
-    margin-bottom: 10px;
-    color: #61dafb; /* React-blue accent */
+  font-size: 1.8em;
+  margin-bottom: 8px;
+  color: #38bdf8;
+  font-weight: 700;
 }
 
 .password-popup p {
-    font-size: 1em; 
-    color: #ccc;
-    margin-bottom: 25px;
+  font-size: 0.95em;
+  color: #94a3b8;
+  margin-bottom: 20px;
 }
 
 .password-popup input[type="password"] {
-    /* Input field styling */
-    width: 100%;
-    padding: 12px; 
-    margin: 15px 0 25px 0; 
-    border: 1px solid #444; 
-    border-radius: 6px; 
-    font-size: 1.1em; 
-    color: #f0f0f0; /* Light text for visibility */
-    background-color: #282c34; /* Matches your main diary background */
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1em;
+  color: #f8fafc;
+  background-color: #0a0f1c;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .password-popup input[type="password"]:focus {
-    border-color: #61dafb; /* Blue border on focus */
-    box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.3); 
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
 }
 
 .popup-actions {
-    display: flex; 
-    justify-content: center; 
-    gap: 5px; 
-    margin-top: 5;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .popup-actions button {
-    /* Button base styles */
-    padding: 12px 25px; 
-    border: none;
-    border-radius: 6px; 
-    cursor: pointer;
-    font-size: 1em; 
-    font-weight: bold;
-    max-height: fit-content;
-    width: 120px;
-    max-width: 200px;
-    transition: background-color 0.2s, transform 0.1s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .popup-actions button[type="submit"] {
-    /* Unlock Button (Primary Action) */
-    background-color: #61dafb; 
-    color: #282c34;
+  background-color: #38bdf8;
+  color: #090d16;
 }
 
 .popup-actions button[type="submit"]:hover {
-    background-color: #40c4ff;
-    transform: translateY(-1px);
+  background-color: #0ea5e9;
+  color: #ffffff;
 }
 
-.popup-actions button[type="button"] { 
-    /* Go Home Button (Secondary Action) */
-    background-color: #555; 
-    color: #f0f0f0;
+.popup-actions button[type="button"] {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .popup-actions button[type="button"]:hover {
-    background-color: #777;
-    transform: translateY(-1px);
+  background-color: #334155;
+  color: #ffffff;
 }
 
 .error-message {
-    color: #ff6161; /* Soft red for errors */
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 0.95em;
+  color: #f87171;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 0.9em;
 }
 
 .loading-spinner {
-    border: 4px solid #444; /* Light border */
-    border-top: 4px solid #61dafb; /* React-blue top */
-    border-radius: 50%;
-    width: 30px;
-    height: 40px;
-    max-width: 30px;
-    max-height: 30px;
-    background-color: #282c34;
-    animation: spin 1s ease-in-out infinite;
-    margin: 0 auto; /* Center the spinner */
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #38bdf8;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg); /* Start at 0 degrees rotation */
-  }
-  100% {
-    transform: rotate(360deg); /* End at 360 degrees rotation, completing a full circle */
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .diary-header {
+    flex-direction: column;
+    text-align: center;
   }
 }

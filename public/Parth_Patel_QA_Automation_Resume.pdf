@@ -1,0 +1,112 @@
+%PDF-1.4
+1 0 obj
+<< /Title (Parth Patel - QA Automation Engineer Resume)
+   /Author (Parth Patel)
+   /Creator (Parth Patel Portfolio)
+   /Producer (PDF Generator)
+   /CreationDate (D:20260906000000)
+>> endobj
+2 0 obj
+<< /Type /Catalog /Pages 3 0 R >> endobj
+3 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >> endobj
+4 0 obj
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Contents 5 0 R
+   /Resources << /Font << /F1 6 0 R /F2 7 0 R >> >> >> endobj
+5 0 obj
+<< /Length 1650 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(PARTH PATEL) Tj
+/F2 11 Tf
+0 -18 Td
+(QA Automation Engineer | Java | Selenium | TestNG | API Testing) Tj
+/F2 9 Tf
+0 -15 Td
+(Email: patelparth1167@gmail.com | Phone: +91 94287 80513 | LinkedIn: linkedin.com/in/patelparth123) Tj
+0 -15 Td
+(-----------------------------------------------------------------------------------------------------------------------) Tj
+/F1 12 Tf
+0 -20 Td
+(PROFESSIONAL SUMMARY) Tj
+/F2 9.5 Tf
+0 -15 Td
+(QA Automation Engineer with hands-on experience in Java-based test automation, Selenium WebDriver,) Tj
+0 -13 Td
+(TestNG, API testing, SQL database validation, debugging, and CI/CD practices. Experienced in designing) Tj
+0 -13 Td
+(maintainable automation frameworks and executing continuous testing pipelines.) Tj
+/F1 12 Tf
+0 -22 Td
+(TECHNICAL SKILLS) Tj
+/F2 9.5 Tf
+0 -15 Td
+(Programming: Java, SQL) Tj
+0 -13 Td
+(Test Automation: Selenium WebDriver, TestNG, Page Object Model (POM), UI Automation) Tj
+0 -13 Td
+(API & Backend: REST API Testing, API Automation, Swagger / OpenAPI, SQL Server Data Validation) Tj
+0 -13 Td
+(CI/CD & DevOps: Jenkins, Git, GitHub, Maven, Automated Test Execution) Tj
+0 -13 Td
+(Testing Practices: Functional, Regression, Integration, Smoke Testing, Debugging, Root Cause Analysis) Tj
+/F1 12 Tf
+0 -22 Td
+(QA AUTOMATION EXPERIENCE) Tj
+/F2 9.5 Tf
+0 -15 Td
+(* Developed and maintained automated test cases using Java, Selenium WebDriver, and TestNG.) Tj
+0 -13 Td
+(* Engineered UI automation scripts to validate critical end-to-end user workflows across browsers.) Tj
+0 -13 Td
+(* Conducted API testing and API automation for REST endpoints, status codes, and JSON verification.) Tj
+0 -13 Td
+(* Performed backend data validation using SQL Server queries for data integrity and consistency.) Tj
+0 -13 Td
+(* Investigated automation execution failures, debugged test scripts, and conducted root cause analysis.) Tj
+0 -13 Td
+(* Executed automated test suites within Jenkins CI/CD pipelines to support continuous build testing.) Tj
+/F1 12 Tf
+0 -22 Td
+(FEATURED QA PROJECTS) Tj
+/F2 9.5 Tf
+0 -15 Td
+(1. Java Selenium Test Automation Framework - POM, TestNG, DataProviders, Custom Utilities, Maven, Git) Tj
+0 -13 Td
+(2. REST API Testing & Automation Suite - Endpoint Validation, JSON Schema, Status Codes, Swagger) Tj
+0 -13 Td
+(3. SQL Database Validation Suite - SQL Server, Relational Integrity, Backend Data Consistency) Tj
+0 -13 Td
+(4. CI/CD Automated Test Pipeline - Jenkins build integration, automated triggers, HTML reporting) Tj
+/F1 12 Tf
+0 -22 Td
+(EDUCATION & CERTIFICATIONS) Tj
+/F2 9.5 Tf
+0 -15 Td
+(* AWS Academy Graduate - Cloud Foundations | Java with Data Structures & Algorithms) Tj
+0 -13 Td
+(* Machine Learning Course | Full Stack Development Program (Internshala)) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000216 00000 n 
+0000000267 00000 n 
+0000000324 00000 n 
+0000000455 00000 n 
+0000002180 00000 n 
+0000002254 00000 n 
+trailer
+<< /Size 8 /Root 2 0 R /Info 1 0 R >>
+startxref
+2323
+%%EOF
