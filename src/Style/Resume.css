@@ -1,0 +1,393 @@
+/* Resume Section Styles - Human-Crafted, Calm & Composed */
+.resume-section {
+  background-color: var(--bg-primary, #101114);
+  position: relative;
+}
+
+.resume-card-box {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-card-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--accent-primary-subtle, rgba(229, 169, 80, 0.05)) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.resume-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.1));
+  color: var(--accent-primary, #e5a950);
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.resume-main-heading {
+  font-size: 1.9rem;
+  font-weight: 750;
+  color: var(--text-main, #faf8f5);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.resume-subtext {
+  font-size: 1rem;
+  color: var(--text-secondary, #c5bfb4);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 22px;
+}
+
+.resume-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.res-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-main, #faf8f5);
+}
+
+.res-check-icon {
+  color: var(--accent-green, #10b981);
+  font-size: 0.9rem;
+  min-width: 14px;
+}
+
+.resume-action-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-download-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 24px;
+  background: var(--accent-primary, #e5a950);
+  color: #101114;
+  font-size: 0.92rem;
+  font-weight: 650;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.btn-download-resume:hover {
+  background: var(--accent-primary-hover, #d4953c);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-preview-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  padding: 11px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.1));
+  color: var(--text-main, #faf8f5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-preview-resume:hover {
+  background: var(--accent-primary-subtle);
+  color: var(--accent-primary);
+  border-color: var(--border-hover);
+}
+
+.btn-contact-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--text-secondary, #c5bfb4);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.15));
+  font-size: 0.88rem;
+  font-weight: 550;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-contact-resume:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-primary);
+  background: var(--accent-primary-subtle);
+}
+
+.file-info-note {
+  font-size: 0.74rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Resume Document Modal View */
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 11, 14, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.resume-modal-sheet {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.1));
+  border-radius: 14px;
+  max-width: 850px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.resume-modal-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--bg-secondary, #15171c);
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+}
+
+.resume-modal-title {
+  font-size: 0.86rem;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+}
+
+.modal-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modal-action {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-action.print-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+}
+
+.btn-modal-action.print-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-modal-action.download-btn {
+  background: var(--accent-primary, #e5a950);
+  color: #101114;
+}
+
+.btn-modal-action.download-btn:hover {
+  background: var(--accent-primary-hover, #d4953c);
+  color: #ffffff;
+}
+
+.btn-modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-modal-close:hover {
+  background: #f87171;
+}
+
+.resume-document-paper {
+  padding: 34px 38px;
+  background: var(--bg-secondary, #15171c);
+  overflow-y: auto;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.resume-doc-header {
+  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid var(--border-color, rgba(229, 169, 80, 0.3));
+}
+
+.doc-candidate-name {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-main, #faf8f5);
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.doc-candidate-title {
+  font-size: 0.95rem;
+  color: var(--accent-primary, #e5a950);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.doc-contact-line {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.resume-doc-section {
+  margin-bottom: 20px;
+}
+
+.doc-sec-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main, #faf8f5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sec-icon {
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+}
+
+.doc-text {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.doc-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-secondary);
+}
+
+.doc-skills-list strong {
+  color: var(--text-main);
+}
+
+.doc-bullet-list {
+  padding-left: 18px;
+  margin: 0;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.doc-project-item {
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+.doc-project-item strong {
+  color: var(--text-main);
+}
+
+.doc-certs-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-secondary);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resume-document-paper, .resume-document-paper * {
+    visibility: visible;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+  .resume-document-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-card-box {
+    padding: 24px;
+  }
+  .resume-document-paper {
+    padding: 18px;
+  }
+}

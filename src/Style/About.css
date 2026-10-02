@@ -1,0 +1,138 @@
+/* About Section Styles - Human-Crafted, Calm & Composed */
+.about-section {
+  background-color: var(--bg-primary, #101114);
+  position: relative;
+}
+
+.about-bio-card {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  padding: 34px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s ease;
+}
+
+.about-bio-card:hover {
+  border-color: var(--border-hover);
+}
+
+.bio-lead-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-main, #faf8f5);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.07));
+}
+
+.cyan-text {
+  color: var(--accent-primary, #e5a950);
+}
+
+.bio-body-paragraphs p {
+  color: var(--text-secondary, #c5bfb4);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.bio-body-paragraphs strong {
+  color: var(--text-main, #faf8f5);
+  font-weight: 600;
+}
+
+.target-roles-highlight {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.08));
+  border-left: 3px solid var(--accent-primary, #e5a950);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem !important;
+  color: var(--text-main, #faf8f5) !important;
+}
+
+/* Focus Areas Container */
+.focus-container {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  padding: 34px;
+  box-shadow: var(--shadow-card);
+}
+
+.focus-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main, #faf8f5);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.code-accent {
+  font-family: var(--font-mono, monospace);
+  color: var(--accent-primary, #e5a950);
+  font-size: 1.05rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.focus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-secondary, #15171c);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  padding: 16px 18px;
+  border-radius: 10px;
+  transition: var(--transition-smooth);
+}
+
+.focus-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.focus-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 8px;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.1));
+  color: var(--accent-primary, #e5a950);
+  font-size: 1.05rem;
+}
+
+.focus-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main, #faf8f5);
+  margin-bottom: 3px;
+}
+
+.focus-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888275);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 576px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-bio-card, .focus-container {
+    padding: 22px;
+  }
+}

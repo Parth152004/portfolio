@@ -1,45 +1,154 @@
-/* Contact.css */
+/* Contact Section Styles - Human-Crafted, Calm & Composed */
+.contact-section {
+  background-color: var(--bg-primary, #101114);
+  position: relative;
+  padding-bottom: 40px;
+}
 
-.contact-container {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  
-  .contact-info {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .contact-info h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  .contact-info ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .contact-info ul li {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .social-icon {
-    font-size: 1.5em;
-    margin-right: 10px;
-  }
-  
-  .contact-info ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .contact-info ul li a:hover {
-    text-decoration: underline;
-  }
-  
+.contact-main-card {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 30px;
+}
+
+.contact-channel-card {
+  background: var(--bg-secondary, #15171c);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.contact-channel-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+}
+
+.channel-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.1));
+  color: var(--accent-primary, #e5a950);
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.channel-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main, #faf8f5);
+  margin-bottom: 6px;
+}
+
+.channel-value {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #c5bfb4);
+  text-decoration: none;
+  margin-bottom: 16px;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.channel-value:hover {
+  color: var(--accent-primary);
+}
+
+.btn-copy-email {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.1));
+  color: var(--text-main, #faf8f5);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-copy-email:hover {
+  background: var(--accent-primary-subtle);
+  border-color: var(--border-hover);
+  color: var(--accent-primary);
+}
+
+.btn-channel-action {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.1));
+  border: 1px solid var(--border-color, rgba(229, 169, 80, 0.25));
+  color: var(--accent-primary, #e5a950);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-channel-action:hover {
+  background: var(--accent-primary, #e5a950);
+  color: #101114;
+}
+
+.contact-extra-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--border-subtle, rgba(255, 255, 255, 0.08));
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.extra-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.extra-icon {
+  color: var(--accent-primary, #e5a950);
+}
+
+.extra-sep {
+  color: var(--border-subtle, rgba(255, 255, 255, 0.15));
+}
+
+.extra-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.extra-link:hover {
+  color: var(--accent-primary);
+}
+
+.footer-bottom-bar {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.copyright-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}

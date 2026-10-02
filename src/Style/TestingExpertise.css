@@ -1,0 +1,111 @@
+/* Testing Expertise Styles - Human-Crafted, Calm & Composed */
+.expertise-section {
+  background-color: var(--bg-primary, #101114);
+  position: relative;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.expertise-card {
+  background: var(--bg-card, #1b1d24);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.expertise-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--border-subtle, rgba(255, 255, 255, 0.08));
+  transition: var(--transition-smooth);
+}
+
+.expertise-card.accent-cyan::before { background: var(--accent-primary, #e5a950); }
+.expertise-card.accent-blue::before { background: var(--accent-blue, #f3b765); }
+.expertise-card.accent-teal::before { background: var(--accent-teal, #14b8a6); }
+.expertise-card.accent-green::before { background: var(--accent-green, #10b981); }
+.expertise-card.accent-amber::before { background: var(--accent-amber, #f59e0b); }
+.expertise-card.accent-purple::before { background: var(--accent-purple, #c084fc); }
+.expertise-card.accent-red::before { background: var(--accent-rose, #f43f5e); }
+
+.expertise-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-hover);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.expertise-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: var(--accent-primary-subtle, rgba(229, 169, 80, 0.1));
+  color: var(--accent-primary, #e5a950);
+}
+
+.card-badge {
+  font-size: 0.7rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.expertise-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main, #faf8f5);
+  margin-bottom: 10px;
+}
+
+.expertise-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #c5bfb4);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.exp-tag {
+  font-size: 0.74rem;
+  font-family: var(--font-mono, monospace);
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
